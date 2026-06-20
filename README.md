@@ -2,9 +2,9 @@
 
 **Independent diabetes context organizer for manual review and personal data workflows.**
 
-Gluco Context helps users organize meal, glucose, insulin-on-board (IOB), sensor, profile and treatment context in one place.
+Gluco Context helps users organize meal, glucose, insulin-on-board (IOB), sensor, profile and personal health context in one place.
 
-It is designed to support personal review, structured snapshots and external AI-assisted analysis chosen by the user.
+It is designed to support personal review, structured snapshots and structured text prepared for optional user-directed use with an external AI service chosen by the user.
 
 ## What it does
 
