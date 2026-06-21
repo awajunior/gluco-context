@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v1.13.0-beta29.7: native widget delta unit fix; keeps IOB + 5 BG visible -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingTop="6dp"
+    android:paddingRight="8dp"
+    android:paddingBottom="6dp"
+    android:background="@drawable/aaps_widget_bg">
+
+    <LinearLayout
+        android:id="@+id/widget_open_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/widget_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Gluco Context"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:maxLines="1" />
+        <TextView
+            android:id="@+id/widget_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Widget"
+            android:textColor="#D7ECFF"
+            android:textStyle="bold"
+            android:textSize="10sp"
+            android:maxLines="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:minHeight="80dp"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="4dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="3dp"
+        android:background="@drawable/aaps_widget_inner_bg"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.12"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/widget_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textColor="#2AC05F"
+                android:textStyle="bold"
+                android:textSize="35sp"
+                android:includeFontPadding="false"
+                android:singleLine="true"
+                android:gravity="left" />
+            <TextView
+                android:id="@+id/widget_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mg/dL"
+                android:textColor="#BDE8FF"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:maxLines="1" />
+            <TextView
+                android:id="@+id/widget_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CGM —"
+                android:textColor="#055C43"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:maxLines="2"
+                android:background="@drawable/aaps_widget_status_bg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.62"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.92"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/widget_trend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="→"
+                    android:textColor="#FFA51D"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:includeFontPadding="false" />
+                <TextView
+                    android:id="@+id/widget_delta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Δ1 —"
+                    android:textColor="#FFC046"
+                    android:textStyle="bold"
+                    android:textSize="8.4sp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:ellipsize="none" />
+                <TextView
+                    android:id="@+id/widget_delta_speed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="—/min"
+                    android:textColor="#FFC046"
+                    android:textStyle="bold"
+                    android:textSize="7.2sp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:ellipsize="none" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.10"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/widget_iob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="—"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:ellipsize="none" />
+                <TextView
+                    android:id="@+id/widget_iob_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="U IOB"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="10sp"
+                    android:maxLines="1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.26"
+            android:orientation="vertical"
+            android:gravity="top"
+            android:paddingTop="27dp"
+            android:paddingRight="2dp">
+            <TextView
+                android:id="@+id/widget_pred_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="30 min"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:gravity="right"
+                android:maxLines="1"
+                android:layout_marginBottom="4dp" />
+            <ImageView
+                android:id="@+id/widget_chart"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="6dp" />
+            <TextView
+                android:id="@+id/widget_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:gravity="center_vertical|left"
+                android:ellipsize="none"
+                android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="4dp">
+        <LinearLayout
+            android:id="@+id/widget_sync_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/widget_updated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atualizado há —"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="11sp" />
+            <TextView
+                android:id="@+id/widget_sync_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Toque para sincronizar"
+                android:textColor="#D8EEFF"
+                android:textSize="10sp" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/widget_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CGM —"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="11sp" />
+    </LinearLayout>
+</LinearLayout>

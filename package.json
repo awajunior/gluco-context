@@ -1,0 +1,36 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/build-web.cjs",
+    "preview": "vite preview",
+    "android:first": "npm install && npx tsc -b && npx vite build && npx cap add android && npx cap sync android && npm run android:patch && npm run copy-kotlin",
+    "android:init": "npm run build && npx cap init \"Gluco Context\" com.glucocontext.app --web-dir dist && npx cap add android",
+    "android:sync": "npm run build && node node_modules/@capacitor/cli/bin/capacitor sync android",
+    "android:open": "npx cap open android",
+    "android:patch": "node scripts/patch-android-manifest.cjs",
+    "android:sync-patched": "npm run build && node node_modules/@capacitor/cli/bin/capacitor sync android && npm run android:patch",
+    "copy-icons": "node scripts/copy-icons.cjs",
+    "android:full": "npm run build && npx cap add android && npm run copy-icons && npx cap sync android",
+    "android:setup": "npm run build && npx cap add android && npx cap sync android && npm run android:patch && npm run copy-kotlin",
+    "android:rebuild": "npm run build && npx cap sync android && npm run android:patch && npm run copy-kotlin",
+    "copy-kotlin": "scripts\\copy-kotlin-plugin.bat"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "typescript": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "xlsx": "latest",
+    "lucide-react": "latest",
+    "@capacitor/core": "latest",
+    "@capacitor/cli": "latest",
+    "@capacitor/android": "latest",
+    "@capacitor/app-launcher": "latest",
+    "@capacitor/local-notifications": "latest",
+    "@capacitor/clipboard": "latest"
+  },
+  "devDependencies": {},
+  "version": "2.31.0-RC5.1-SafetyGate",
+  "name": "aaps-assist-2_30-first-release"
+}
