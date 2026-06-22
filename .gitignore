@@ -141,3 +141,27 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+# Android / Capacitor local files
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/key.properties
+
+# Signing keys
+*.jks
+*.keystore
+*.p12
+*.pfx
+
+# Release artifacts
+*.apk
+*.aab
+
+# Generated web build
+dist/
+
+# Local backups and exports
+*.bak
+*.backup
+*_backup.json
