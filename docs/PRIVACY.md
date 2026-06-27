@@ -1,46 +1,46 @@
-# Privacidade
+# Privacy
 
-## Resumo
+## Summary
 
-O Gluco Context não coleta, não transmite e não armazena dados em servidores próprios.  
-Todos os dados permanecem no dispositivo do usuário.
-
----
-
-## O que o app faz
-
-- Lê dados glicêmicos do **Nightscout** do próprio usuário, usando a URL e o token informados pelo usuário dentro do app.
-- Processa e exibe esses dados localmente no dispositivo.
-- Permite registrar contexto de refeições e padrões pessoais — armazenados apenas localmente.
+Gluco Context does not collect, transmit, or store any data on external servers.  
+All data remains on the user's device.
 
 ---
 
-## O que o app não faz
+## What the app does
 
-- Não cria conta de usuário.
-- Não envia dados para servidores do desenvolvedor.
-- Não compartilha dados com terceiros.
-- Não exibe anúncios.
-- Não rastreia uso ou comportamento.
-- **Não envia bolus, não emite comandos terapêuticos e não interfere no AAPS.**
+- Reads glycemic data from the user's own **Nightscout** instance, using the URL and token entered by the user inside the app.
+- Processes and displays that data locally on the device.
+- Allows the user to log meal context and personal patterns — stored locally only.
 
 ---
 
-## Nightscout e token
+## What the app does not do
 
-A URL do Nightscout e o token de acesso são informados pelo próprio usuário e ficam armazenados localmente no dispositivo.  
-O desenvolvedor não tem acesso a esses dados em nenhum momento.
-
----
-
-## Dados locais
-
-Os únicos dados persistidos são os que o usuário digita no próprio app (contexto pessoal, padrões comportamentais).  
-Esses dados ficam no armazenamento local do Android e são removidos ao desinstalar o app.
+- Does not create user accounts.
+- Does not send data to the developer's servers.
+- Does not share data with third parties.
+- Does not display ads.
+- Does not track usage or behavior.
+- **Does not deliver boluses, does not issue therapeutic commands, and does not interfere with AAPS.**
 
 ---
 
-## Limite de responsabilidade
+## Nightscout and token
 
-O Gluco Context é uma ferramenta de suporte à decisão, não um dispositivo médico.  
-Todas as decisões terapêuticas são de responsabilidade exclusiva do usuário e de sua equipe de saúde.
+The Nightscout URL and access token are entered by the user and stored locally on the device.  
+The developer has no access to this data at any time.
+
+---
+
+## Local data
+
+The only data persisted is what the user types directly into the app (personal context, behavioral patterns).  
+This data is stored in Android local storage and is removed when the app is uninstalled.
+
+---
+
+## Disclaimer
+
+Gluco Context is a decision-support tool, not a certified medical device.  
+It must not be used as the sole source of information for therapeutic decisions.
