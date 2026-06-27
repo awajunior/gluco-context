@@ -69,7 +69,7 @@ See [docs/PRIVACY.md](docs/PRIVACY.md) for full details.
 
 ## Project status
 
-Initial community testing release (RC9.30) is available on the [Releases](../../releases) page.
+The first stable release (RC9.30) is available on the [Releases](../../releases) page.
 
 This project is intended for informed users who understand their own diabetes tools and personal workflows.
 
