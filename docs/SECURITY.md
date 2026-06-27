@@ -1,55 +1,55 @@
-# Segurança
+# Security
 
-## Reportar uma vulnerabilidade
+## Reporting a vulnerability
 
-Se você encontrou uma vulnerabilidade de segurança no Gluco Context, **não abra uma Issue pública**.
+If you have found a security vulnerability in Gluco Context, **do not open a public Issue**.
 
-Entre em contato de forma privada antes de qualquer divulgação.
+Please contact us privately before any public disclosure.
 
-**Como reportar:**  
-Abra uma [Security Advisory](../../security/advisories/new) privada neste repositório  
-(aba Security → Advisories → "Report a vulnerability").
-
----
-
-## O que incluir no relatório
-
-- Descrição clara da vulnerabilidade
-- Passos para reproduzir
-- Impacto potencial
-- Versão do app afetada
-- Se possível, sugestão de correção
+**How to report:**  
+Open a private [Security Advisory](../../security/advisories/new) in this repository  
+(Security tab → Advisories → "Report a vulnerability").
 
 ---
 
-## O que esperar
+## What to include in your report
 
-- Confirmação de recebimento em até 7 dias
-- Avaliação e resposta sobre o impacto
-- Correção coordenada antes de qualquer divulgação pública
-
----
-
-## Escopo
-
-São consideradas vulnerabilidades relevantes:
-
-- Exposição de dados do usuário (URL Nightscout, token, dados locais)
-- Execução de código arbitrário no dispositivo
-- Bypass de permissões Android
-- Comunicação não autorizada com serviços externos
+- Clear description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Affected app version
+- Suggested fix, if available
 
 ---
 
-## Fora do escopo
+## What to expect
 
-- Problemas no servidor Nightscout do próprio usuário (não é mantido por este projeto)
-- Vulnerabilidades no AAPS (reportar ao projeto AAPS diretamente)
-- Sugestões de funcionalidade (abrir Issue normal)
+- Acknowledgement within 7 days
+- Assessment and response regarding impact
+- Coordinated fix before any public disclosure
 
 ---
 
-## Aviso
+## Scope
 
-O Gluco Context é uma ferramenta de suporte à decisão, não um dispositivo médico certificado.  
-Não deve ser usado como única fonte de informação para decisões terapêuticas.
+The following are considered relevant vulnerabilities:
+
+- Exposure of user data (Nightscout URL, token, local data)
+- Arbitrary code execution on the device
+- Android permission bypass
+- Unauthorized communication with external services
+
+---
+
+## Out of scope
+
+- Issues with the user's own Nightscout server (not maintained by this project)
+- Vulnerabilities in AAPS (report directly to the AAPS project)
+- Feature requests (open a regular Issue)
+
+---
+
+## Disclaimer
+
+Gluco Context is a decision-support tool, not a certified medical device.  
+It must not be used as the sole source of information for therapeutic decisions.
