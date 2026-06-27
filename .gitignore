@@ -165,3 +165,10 @@ dist/
 *.bak
 *.backup
 *_backup.json
+
+# Build release scripts (contain local machine paths)
+BUILD_RELEASE_*.cmd
+write_keyprops.js
+
+# Debug/patch backup artifacts
+*.before_fix
