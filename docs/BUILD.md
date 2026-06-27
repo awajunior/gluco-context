@@ -1,24 +1,24 @@
-# Como compilar o Gluco Context localmente
+# Building Gluco Context locally
 
-## Pré-requisitos
+## Prerequisites
 
-| Ferramenta | Versão mínima |
+| Tool | Minimum version |
 |---|---|
-| Node.js | 18 ou superior |
+| Node.js | 18 or higher |
 | Java (JDK) | 21 |
-| Android SDK | API 33 ou superior |
-| Android Studio | Qualquer versão recente (para o Gradle) |
+| Android SDK | API 33 or higher |
+| Android Studio | Any recent version (for Gradle) |
 
-Defina as variáveis de ambiente antes de compilar:
+Set the following environment variables before building:
 
 ```
-JAVA_HOME=<caminho do JDK 21>
-ANDROID_HOME=<caminho do Android SDK>
+JAVA_HOME=<path to JDK 21>
+ANDROID_HOME=<path to Android SDK>
 ```
 
 ---
 
-## 1. Instalar dependências
+## 1. Install dependencies
 
 ```bash
 npm install
@@ -26,85 +26,85 @@ npm install
 
 ---
 
-## 2. Gerar o bundle web
+## 2. Build the web bundle
 
 ```bash
 npm run build
 ```
 
-Isso copia `webroot/` → `dist/` sem transpilação.  
-**Não edite arquivos dentro de `dist/` diretamente** — eles são sobrescritos a cada build.
+This copies `webroot/` → `dist/` without transpilation.  
+**Do not edit files inside `dist/` directly** — they are overwritten on every build.
 
 ---
 
-## 3. Sincronizar com o Android
+## 3. Sync with Android
 
 ```bash
 npx cap sync android
 ```
 
-Isso copia `dist/` → `android/app/src/main/assets/public/`.
+This copies `dist/` → `android/app/src/main/assets/public/`.
 
 ---
 
-## 4. Compilar o APK de debug
+## 4. Build a debug APK
 
 ```bash
 cd android
 ./gradlew assembleDebug
 ```
 
-O APK gerado estará em:
+The generated APK will be at:
 ```
 android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
 ---
 
-## 5. Compilar o APK de release (assinado)
+## 5. Build a signed release APK
 
-Você precisará de um keystore próprio. Nunca use o keystore de outra pessoa.
+You will need your own keystore. Never use someone else's keystore.
 
-Crie o arquivo `android/key.properties` com o seguinte conteúdo:
+Create the file `android/key.properties` with the following content:
 
 ```
-storeFile=/caminho/completo/para/seu.keystore
-storePassword=SUA_SENHA
+storeFile=/full/path/to/your.keystore
+storePassword=YOUR_STORE_PASSWORD
 keyAlias=key0
-keyPassword=SUA_SENHA_DA_CHAVE
+keyPassword=YOUR_KEY_PASSWORD
 ```
 
-Depois compile:
+Then build:
 
 ```bash
 cd android
 ./gradlew assembleRelease
 ```
 
-O APK assinado estará em:
+The signed APK will be at:
 ```
 android/app/build/outputs/apk/release/app-release.apk
 ```
 
-**Remova `android/key.properties` após o build.** Esse arquivo nunca deve ser commitado.
+**Delete `android/key.properties` after the build.** This file must never be committed.
 
 ---
 
-## Estrutura relevante do projeto
+## Project structure
 
 ```
-webroot/          ← fonte controlada do bundle web
-dist/             ← artefato gerado (não versionar)
-reference/        ← versão legível da UI (não compilada diretamente)
-android-plugin/   ← cópias de referência dos plugins Kotlin
-android/          ← projeto Android (Capacitor)
-scripts/          ← scripts de build auxiliares
+webroot/          ← controlled source of the web bundle
+dist/             ← generated artifact (do not commit)
+reference/        ← human-readable version of the UI (not compiled directly)
+android-plugin/   ← reference copies of Kotlin plugins
+android/          ← Android project (Capacitor)
+scripts/          ← auxiliary build scripts
 ```
 
 ---
 
-## Sobre a interface
+## About the UI
 
-A UI é um bundle React pré-compilado em `webroot/assets/index-*.js`.  
-A versão legível está em `reference/main.readable.jsx`.  
-Patches na UI devem ser aplicados cirurgicamente em `webroot/` — não recompile o bundle a partir do `reference/` sem validação completa.
+The UI is a pre-compiled React bundle located at `webroot/assets/index-*.js`.  
+The human-readable version is at `reference/main.readable.jsx`.  
+UI patches must be applied surgically to `webroot/` — do not recompile the bundle from `reference/` without full validation.
