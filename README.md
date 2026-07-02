@@ -54,6 +54,9 @@ Download the latest APK from the [Releases](../../releases) page and follow the 
 - [docs/INSTALL.md](docs/INSTALL.md) — how to install the APK
 - [docs/PRIVACY.md](docs/PRIVACY.md) — data handling and privacy
 - [docs/SECURITY.md](docs/SECURITY.md) — how to report a vulnerability
+- [docs/USAGE.md](docs/USAGE.md) — how to use the app
+- [docs/USAGE.pt-BR.md](docs/USAGE.pt-BR.md) — como usar o app (português)
+- [docs/USAGE.es.md](docs/USAGE.es.md) — cómo usar la app (español)
 
 ---
 
